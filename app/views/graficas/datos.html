@@ -1,0 +1,212 @@
+﻿<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="pull-left page-title">Gasto vs Utilidad</h4>
+        <ol class="breadcrumb pull-right">
+            <li><a href="#">Inicio</a></li>
+            <li class="active">Version 2</li>
+        </ol>
+    </div>
+</div>
+
+<div id="templates" class="row">
+    <div class="col-lg-12">
+        <div class="portlet">
+            <div id="portlet1" class="panel-collapse collapse in">
+                <div class="portlet-body">
+                    <ul class="nav nav-tabs navtab-bg">
+                        <li class="active">
+                            <a href="#grafico-general" data-toggle="tab" aria-expanded="false">
+                                <span class="visible-xs"><i class="fa fa-bar-chart-o"></i></span>
+                                <span class="hidden-xs"><i class="fa fa-bar-chart-o"></i> General</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#grafico-empresas" data-toggle="tab" aria-expanded="true">
+                                <span class="visible-xs"><i class="fa fa-area-chart"></i></span>
+                                <span class="hidden-xs"><i class="fa fa-area-chart"></i> Empresas</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#grafico-sucursales" data-toggle="tab" aria-expanded="true">
+                                <span class="visible-xs"><i class="fa fa-bar-chart-o"></i></span>
+                                <span class="hidden-xs"><i class="fa fa-bar-chart-o"></i> Sucursales</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#grafico-conceptos" data-toggle="tab" aria-expanded="false">
+                                <span class="visible-xs"><i class="fa fa-line-chart"></i></span>
+                                <span class="hidden-xs"><i class="fa fa-line-chart"></i> Conceptos</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="grafico-general">
+                            <div class="btn-toolbar Filtros" role="toolbar">
+                                <!--<div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnMes">Mes</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Meses" class="dropdown-menu" role="menu"></ul>
+                                </div>-->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnAnio">Año</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Anios" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="submit" class="btn waves-effect waves-light btn-primary" form="FiltroGrafico"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Empresa</th>
+                                            <th class="text-center">Gasto Total ($)</th>
+                                            <th class="text-center">Utilidad Total ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="detalle-grafico1"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="grafico-empresas">
+                            <div class="btn-toolbar Filtros" role="toolbar">
+                                <!--<div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnMes2">Mes</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Meses2" class="dropdown-menu" role="menu"></ul>
+                                </div>-->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnAnio2">Año</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Anios2" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnEmpresa">Empresa</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Empresas" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="submit" class="btn waves-effect waves-light btn-primary" form="FiltroGrafico"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div id="container2" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mes</th>
+                                            <th class="text-center">Gasto Total ($)</th>
+                                            <th class="text-center">Utilidad Total ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="detalle-grafico2"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="grafico-sucursales">
+                            <div class="btn-toolbar Filtros" role="toolbar">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnAnio4">Año</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Anios4" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnEmpresa3">Empresa</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Empresas3" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnSucursales">Sucursales</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Sucursales" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="submit" class="btn waves-effect waves-light btn-primary" form="FiltroGrafico"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div id="container4" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mes</th>
+                                            <th class="text-center">Gasto Total ($)</th>
+                                            <th class="text-center">Utilidad Total ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="detalle-grafico4"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="grafico-conceptos">
+                            <div class="btn-toolbar Filtros" role="toolbar">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnMes3">Mes</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Meses3" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnAnio3">Año</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Anios3" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success waves-effect waves-light  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span id="spnEmpresa2">Empresa</span>
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul id="Empresas2" class="dropdown-menu" role="menu"></ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="submit" class="btn waves-effect waves-light btn-primary" form="FiltroGrafico"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div id="container3" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Empresa</th>
+                                            <th class="text-center">Gasto Total ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="detalle-grafico3"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="FiltroGrafico" role="form">
+                        <input id="IdEmpresa" name="IdEmpresa" type="hidden" value="1" />
+                        <input id="IdSucursal" name="IdSucursal" type="hidden" value="1" />
+                        <input id="Mes" name="Mes" type="hidden" value="6" />
+                        <input id="Anio" name="Anio" type="hidden" value="2017" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/comparativo.js"></script>
